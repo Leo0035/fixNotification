@@ -1,13 +1,11 @@
 echo =================
 echo B list
 echo =================
-pm list packages -e -3 | grep -E "zalo|facebook|gm|telegram|instagram|ugc|discord|whatsapp|chrome" | sed -e "s/^package://" >/data/local/tmp/b.txt
+pm list packages -e -3 | grep -E "viber|facebook|gmail|telegram|instagram|youtube|discord|whatsapp|chrome" | sed -e "s/^package://" >/data/local/tmp/b.txt
 wlist=""
 wl2=""
 for word in $(cat /data/local/tmp/b.txt); do wlist="$wlist$word;"; wl2="$wl2$word,"; done
 echo $wlist
-cmd settings put system millet_white $wlist
-cmd settings put system rt_pkg_white_list $wl2
 cmd settings put global meeting_optimization_white_list_pkg_name $wl2
 cmd settings put secure miui_optimization 0
 cmd settings put secure sync_on_wifi_only 0
